@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="titlecolor">#a6fdfe</color>
+    <color name="barbutton">#fff</color>
+    <color name="weixuanzhong">#65bb1e</color>
+    <color name="xuanzhong">#860113</color>
+</resources>

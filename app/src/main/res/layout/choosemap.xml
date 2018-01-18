@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/title"/>
+
+    <RelativeLayout
+        android:id="@+id/sousuo"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="80px">
+            <TextView
+                android:id="@+id/weizhi"
+                android:text="台州"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_marginLeft="20px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="70px"
+                android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/xiala"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/weizhi"
+            android:src="@drawable/xiajiantou"
+            android:layout_width="40px"
+            android:layout_height="40px" />
+            <EditText
+                android:id="@+id/et_searchtext_search"
+                android:layout_width="500px"
+                android:layout_height="45px"
+                android:hint="输入地址"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/xiala"
+                android:textColor="#989898"
+                android:textSize="22px"
+                android:paddingLeft="50px"
+                android:background="@drawable/sousuokuang"
+                android:layout_marginLeft="10px"
+                android:imeOptions="actionSearch"
+                />
+            <ImageView
+                android:id="@+id/ib_searchtext_delete"
+                android:layout_width="80px"
+                android:layout_height="50px"
+                android:padding="10px"
+                android:src="@drawable/explore_search_close"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:layout_alignRight="@+id/et_searchtext_search"
+                android:layout_alignBottom="@+id/et_searchtext_search"
+                />
+            <TextView
+                android:id="@+id/buttonback"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@id/et_searchtext_search"
+                android:text="搜索"
+                android:textSize="26px" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/maprelayot"
+        android:layout_above="@+id/listbutton"
+        android:layout_below="@+id/sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.amap.api.maps2d.MapView>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/dinwei"
+            android:layout_width="50px"
+            android:layout_height="100px" />
+        <Button
+            android:id="@+id/xuanzeweizhi"
+            android:text="添加完成"
+            android:layout_alignParentBottom="true"
+            android:layout_width="200px"
+            android:layout_height="100px" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/listbutton"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="600px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyelerview"
+            android:layout_toRightOf="@+id/statringpoint"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/endpoint"
+            android:layout_toRightOf="@+id/recyelerview"
+            android:layout_width="50px"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/end_yuandian"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/yuandian"
+                android:layout_width="30px"
+                android:layout_height="30px" />
+            <ImageView
+                android:id="@+id/end_fengexian"
+                android:background="#3d2121"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/end_yuandian"
+                android:layout_width="2px"
+                android:layout_height="15px" />
+            <TextView
+                android:id="@+id/end_name"
+                android:gravity="center"
+                android:textSize="26px"
+                android:ems="1"
+                android:text="终点"
+                android:textColor="#b63838"
+                android:layout_below="@+id/end_fengexian"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/statringpoint"
+            android:layout_width="50px"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/yuandian"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/yuandian"
+                android:layout_width="30px"
+                android:layout_height="30px" />
+            <ImageView
+                android:id="@+id/fengexian"
+                android:background="#3d2121"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/yuandian"
+                android:layout_width="2px"
+                android:layout_height="15px" />
+            <TextView
+                android:id="@+id/text_name"
+                android:gravity="center"
+                android:textSize="26px"
+                android:ems="1"
+                android:textColor="#b63838"
+                android:text="起点"
+                android:layout_below="@+id/fengexian"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/control"
+            android:layout_width="200px"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/sheweiqidian"
+                android:text="设为起点"
+                android:textColor="#3b86b4"
+                android:background="@drawable/pathpointeditext"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/setupend"
+                android:text="设为终点"
+                android:textColor="#3b86b4"
+                android:background="@drawable/pathpointeditext"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/setpathpoint"
+                android:text="设为途径点"
+                android:textColor="#3b86b4"
+                android:background="@drawable/pathpointeditext"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:background="@drawable/pathpointeditext"
+                android:id="@+id/delectpathpoint"
+                android:text="删除途经点"
+                android:textColor="#3b86b4"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/delectnotall"
+                android:text="全部删除"
+                android:textColor="#3b86b4"
+                android:background="@drawable/pathpointeditext"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.mtkj.mylvyou"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'org.androidannotations:androidannotations-api:3.3.2'
+    apt 'org.androidannotations:androidannotations:3.3.2'
+    //okHttp
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'com.zhy:autolayout:latest.release'
+    //高德
+    compile 'com.amap.api:map2d:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+    //底部导航栏
+    compile 'com.ashokvarma.android:bottom-navigation-bar:1.2.0'
+    //时间选择
+    compile 'com.brucetoo.pickview:library:1.2.3'
+    //地区选择
+    compile 'liji.library.dev:citypickerview:3.0.1'
+    //listview
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    //dalogn
+    compile 'com.dou361.dialogui:jjdxm-dialogui:1.0.3'
+    //editext隐藏
+    compile 'org.loader:autohideime:1.0'
+    //广播
+    compile 'org.greenrobot:eventbus:3.0.0'
+}
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0]?.processResources?.manifestFile
+    }
+}

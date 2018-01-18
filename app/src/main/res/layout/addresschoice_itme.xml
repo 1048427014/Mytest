@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/yuandian"
+            android:layout_marginTop="10px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/yuandian"
+            android:layout_width="30px"
+            android:layout_height="30px" />
+        <ImageView
+            android:id="@+id/fengexian"
+            android:background="#3d2121"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/yuandian"
+            android:layout_width="2px"
+            android:layout_height="15px" />
+        <TextView
+            android:id="@+id/text_name"
+            android:gravity="center"
+            android:textSize="26px"
+            android:ems="1"
+            android:text="兔兔家在哪林"
+            android:layout_below="@+id/fengexian"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
